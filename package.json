@@ -12,7 +12,7 @@
         "bundle-report": "webpack-bundle-analyzer dist/stats.json",
         "rtl": "webpack",
         "preinstall": "",
-        "postinstall": "ng build --aot --target=production"
+        "postinstall": "ng build --aot"
     },
     "private": true,
     "dependencies": {
