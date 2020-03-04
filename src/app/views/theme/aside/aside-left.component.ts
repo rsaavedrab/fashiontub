@@ -29,6 +29,7 @@ export class AsideLeftComponent implements OnInit, AfterViewInit {
 	currentRouteUrl = '';
 	insideTm: any;
 	outsideTm: any;
+	menu: any
 
 	menuCanvasOptions: OffcanvasOptions = {
 		baseClass: 'kt-aside',
