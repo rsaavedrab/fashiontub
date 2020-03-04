@@ -1,0 +1,44 @@
+<h1 class="bd-title" id="content">Create Order</h1>
+<form [formGroup]="orderForm">
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="inputEmail4">Order Date</label>
+			<input type="text" class="form-control" id="txtOrderDate" formControlName="orderDate" readonly>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputPassword4">User Name</label>
+			<input type="text" class="form-control" id="txtUserName" readonly formControlName="userName">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="inputEmail4">First Name</label>
+			<input type="text" class="form-control" id="txtFirstName" formControlName="firstName">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputPassword4">Last Name</label>
+			<input type="text" class="form-control" id="txtLastName" formControlName="lastName">
+		</div>
+	</div>
+	<fieldset class="form-group">
+		<div class="row">
+			<legend class="col-form-label col-sm-2 pt-0">Services</legend>
+			<div class="col-sm-10">
+				<div class="form-check" *ngFor="let x of services">
+					<input class="form-check-input" type="checkbox" name="x.id_service" [id]="x.id_service" [value]="x.id_service" (change)="addItem(x.id_service, $event)">
+					<label class="form-check-label" [for]="x.id_service">
+						{{ x.name }}
+					</label>
+
+					{{ x.name }}
+				</div>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<label for="exampleFormControlTextarea1">Additional information:</label>
+		<textarea class="form-control" id="txtAdditionalInformation" rows="3" formControlName='additionalInformation'></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary" (click)="Save()">Submit</button>
+</form>
+

@@ -1,0 +1,24 @@
+<h1 class="bd-title" id="content">Orders from Customers</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Date</th>
+        <th scope="col">Additional Information</th>
+        <th scope="col">Servicios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of orderList">
+        <td>{{ x.user_in}}</td>
+        <td>{{ x.date}}</td>
+        <td>{{ x.details}}</td>
+        <td><ul>
+          <li *ngFor="let s of x.order_service">
+            {{ s.service }}
+          </li>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
